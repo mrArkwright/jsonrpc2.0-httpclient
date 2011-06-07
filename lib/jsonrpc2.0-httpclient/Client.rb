@@ -6,6 +6,9 @@ class JsonRpcHttpClient < JsonRpcClient
 		@connection = Net::HTTP.new(inServerAddress, inServerPort)
 		@serverPath = inServerPath
 	end
+	
+
+	private
 
 	def send_request(request)
 		@connection.post(@serverPath, request).body
